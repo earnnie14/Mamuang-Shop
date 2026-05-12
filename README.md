@@ -1,16 +1,43 @@
-# React + Vite
+# 🥭 Mamuang Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack e-commerce simulation web application built with React and Firebase, featuring both seller and buyer perspectives.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://mamuang-shop.vercel.app
 
-## React Compiler
+## 📱 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Seller**
+- Upload product images via Cloudinary
+- Add, edit, and delete products
+- Set product name, price, description, and stock
+- Receive email notifications when new orders are placed
 
-## Expanding the ESLint configuration
+**Buyer**
+- Browse and search products
+- Select product quantity
+- Add products to shopping cart
+- Place orders with Buyer ID
+- Out-of-stock indicator when stock runs out
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+
+- React - Frontend Framework
+- Vite - Build Tool
+- Tailwind CSS - Styling
+- Firebase Firestore - Database
+- Cloudinary - Image Storage
+- EmailJS - Email Notifications
+- Vercel - Deployment
+
+## 🚀 Getting Started
+
+1. Clone the repo: git clone https://github.com/earnnie14/mamuang-shop.git
+2. Install dependencies: npm install
+3. Add credentials in src/config.js
+4. Run the app: npm run dev
+
+## 👩‍💻 Developer
+
+Earnnie — GitHub: @earnnie14
