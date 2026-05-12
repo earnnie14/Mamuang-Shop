@@ -8,11 +8,14 @@ import { EMAILJS_CONFIG } from '../config';
 function CartPage() {
   const { cart, removeFromCart, clearCart, totalPrice } = useCart();
   const [buyerId, setBuyerId] = useState('');
+  const [customerName, setCustomerName] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const handleOrder = async () => {
-    if (!buyerId || cart.length === 0) return;
+    if (!buyerId || !customerName || !address || !phone || cart.length === 0) return;
     setLoading(true);
 
     const itemList = cart
@@ -25,6 +28,9 @@ function CartPage() {
         EMAILJS_CONFIG.templateId,
         {
           buyer_id: buyerId,
+          customer_name: customerName,
+          address: address,
+          phone: phone,
           items: itemList,
           total: `฿${totalPrice.toLocaleString()}`,
         },
@@ -90,6 +96,28 @@ function CartPage() {
       <div className="bg-yellow-50 p-4 rounded-xl mb-4">
         <p className="text-lg font-bold text-green-800">Total: ฿{totalPrice.toLocaleString()}</p>
       </div>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        value={customerName}
+        onChange={(e) => setCustomerName(e.target.value)}
+        className="w-full border rounded-lg px-4 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <input
+        type="text"
+        placeholder="Shipping Address"
+        value={address}
+        onChange={(e) => setAddress(e.target.value)}
+        className="w-full border rounded-lg px-4 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        className="w-full border rounded-lg px-4 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
 
       <input
         type="text"
